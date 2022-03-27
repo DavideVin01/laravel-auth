@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <Header />
+          <Header :title="title" />
 
           <div class="card-body">Work In Progress Website</div>
         </div>
@@ -20,6 +20,11 @@ export default {
   components: {
     Header,
   },
+  data(){
+      return{
+          title: 'Benvenuti',
+      }
+  }
   mounted() {
     console.log("Component mounted.");
   },
