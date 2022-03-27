@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'Admin\HomeController@index')->name('admin.home');
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->namespace('admin')
+    ->group(function () {
+        Route::get('/', 'HomeController@index')->name('home');
+
+        Route::resource('posts', 'PostController');
+    });
