@@ -85,9 +85,7 @@
             </div>
         @endif
 
-        <div class="content">
-            <h1>Work In Progress</h1>
-        </div>
+        <div id="root"></div>
     </div>
 </body>
 
