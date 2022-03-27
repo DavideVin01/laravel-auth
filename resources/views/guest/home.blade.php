@@ -65,6 +65,7 @@
         }
 
     </style>
+    <script src="{{ asset('js/front.js') }}" defer></script>
 </head>
 
 <body>
