@@ -10,10 +10,10 @@
 @endif
 
 @if($post->exists)
-    <form action="{{route('admin.posts.update', $post->id)}}" method="POST">
+    <form action="{{route('admin.posts.update', $post->id)}}" method="POST" novalidate>
         @method('PUT')
         @else
-        <form action="{{ route('admin.posts.store') }}" method="POST">
+        <form action="{{ route('admin.posts.store') }}" method="POST" novalidate>
             @endif
             @csrf
             <div class="row">
