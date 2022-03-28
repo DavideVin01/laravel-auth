@@ -13,6 +13,8 @@
                         <th scope="col">Title</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Created at</th>
+                        <th scope="col">Updated at</th>
+                        <th scope="col">Azioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,8 +24,11 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->slug }}</td>
                             <td>{{ $post->created_at }}</td>
-                            <a href="{{ route('admin.posts.show', $post->id) }}"><button
-                                    class="btn btn-sm btn-warning">Info</button></a>
+                            <td>{{ $post->updated_at }}</td>
+                            <td>
+                                <a href="{{ route('admin.posts.show', $post->id) }}"><button
+                                        class="btn btn-sm btn-primary">Vedi</button></a>
+                            </td>
                         </tr>
                     @empty
                         <tr>
