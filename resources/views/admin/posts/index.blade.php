@@ -22,6 +22,8 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->slug }}</td>
                             <td>{{ $post->created_at }}</td>
+                            <a href="{{ route('admin.posts.show', $post->id) }}"><button
+                                    class="btn btn-sm btn-warning">Info</button></a>
                         </tr>
                     @empty
                         <tr>
