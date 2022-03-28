@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-4 mt-5">
             <div class="shadow">
-                <img src="{{ $post->image }}" alt="Image">
+                <img class="img-fluid" src="{{ $post->image }}" alt="Image">
             </div>
         </div>
         <div class="col-8 mt-5">
