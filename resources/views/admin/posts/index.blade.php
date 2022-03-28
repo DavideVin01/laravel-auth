@@ -5,7 +5,7 @@
         <header class="d-flex justify-content-between">
             <h1>I miei post</h1>
             <a href="{{ route('admin.posts.create') }}">
-                <button class="btn btn-success">Create New Post</button>
+                <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Create New Post</button>
             </a>
         </header>
         <main>
@@ -30,6 +30,12 @@
                             <td>{{ $post->updated_at }}</td>
                             <td>
                                 <div class="d-flex">
+                                    <a href="{{ route('admin.posts.edit', $post->id) }}">
+                                    <button class="btn btn-sm btn-warning mx-2" type="submit">
+                                        <i class="fas fa-pencil"></i>
+                                    </button>
+                                    </a>
+
                                     <a href="{{ route('admin.posts.show', $post->id) }}"><button
                                             class="btn btn-sm btn-primary">
                                             <i class="fas fa-eye"></i></button></a>

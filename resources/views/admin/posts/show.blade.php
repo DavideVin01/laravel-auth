@@ -16,5 +16,32 @@
             <h2><strong>{{ $post->title }}</strong></h2>
             <p>{{ $post->content }}</p>
         </div>
+        <div class="col-12 d-flex justify-content-end">
+
+            {{-- Back Button --}}
+            <a href="{{ route('admin.posts.index') }}">
+            <button class="btn btn-secondary mx-2" type="submit">
+                <i class="fa-solid fa-arrow-rotate-left"> Back</i>
+            </button>
+            </a>
+
+            {{-- Edit Button --}}
+            <a href="{{ route('admin.posts.edit', $post->id) }}">
+            <button class="btn btn-warning mx-2" type="submit">
+                <i class="fas fa-pencil"> Edit</i>
+            </button>
+            </a>
+
+            {{-- Delete Button --}}
+            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                @csrf
+                @method('delete')
+
+                <button class="btn btn-danger mx-2" type="submit">
+                    <i class="fas fa-trash"> Delete</i>
+                </button>
+            </form>
+
+        </div>
     </div>
 @endsection
