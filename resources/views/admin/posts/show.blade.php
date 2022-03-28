@@ -5,6 +5,7 @@
         <h1>Post #{{ $post->id }}</h1>
         <div><strong>Slug - </strong>{{ $post->slug }}</div>
     </div>
+    @include('includes.posts.alert')
     <hr>
     <div class="row">
         <div class="col-4 mt-5">
@@ -33,7 +34,7 @@
             </a>
 
             {{-- Delete Button --}}
-            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post" class="delete-form">
                 @csrf
                 @method('delete')
 
@@ -44,4 +45,9 @@
 
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+<script src="{{ asset('js/delete-form.js') }}"></script>
 @endsection

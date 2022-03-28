@@ -32,7 +32,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="content" class="form-label">Description</label>
-                        <textarea class="form-control" id="content" name="content" rows="5" placeholder="Insert post description">{!! old('content', $post->content) !!}</textarea>
+                        <textarea class="form-control" id="content" name="content" rows="5" placeholder="Insert post description">{{ old('content', $post->content) }}</textarea>
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-end">

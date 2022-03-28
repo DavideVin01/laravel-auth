@@ -92,6 +92,10 @@
             </div>
         </main>
     </div>
+
+    @yield('scripts')
 </body>
+
+
 
 </html>

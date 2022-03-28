@@ -8,6 +8,7 @@
                 <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Create New Post</button>
             </a>
         </header>
+        @include('includes.posts.alert')
         <main>
             <table class="table">
                 <thead class="thead-light">
@@ -39,7 +40,7 @@
                                     <a href="{{ route('admin.posts.show', $post->id) }}"><button
                                             class="btn btn-sm btn-primary">
                                             <i class="fas fa-eye"></i></button></a>
-                                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post" class="delete-form">
                                         @csrf
                                         @method('delete')
 
@@ -61,4 +62,8 @@
             </table>
         </main>
     </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/delete-form.js') }}"></script>
 @endsection
