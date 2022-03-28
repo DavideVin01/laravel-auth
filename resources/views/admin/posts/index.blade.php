@@ -26,8 +26,19 @@
                             <td>{{ $post->created_at }}</td>
                             <td>{{ $post->updated_at }}</td>
                             <td>
-                                <a href="{{ route('admin.posts.show', $post->id) }}"><button
-                                        class="btn btn-sm btn-primary">Vedi</button></a>
+                                <div class="d-flex">
+                                    <a href="{{ route('admin.posts.show', $post->id) }}"><button
+                                            class="btn btn-sm btn-primary">
+                                            <i class="fas fa-eye"></i></button></a>
+                                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+
+                                        <button class="btn btn-sm btn-danger mx-2" type="submit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     @empty
