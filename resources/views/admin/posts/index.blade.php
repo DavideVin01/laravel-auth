@@ -60,6 +60,11 @@
                     @endforelse
                 </tbody>
             </table>
+            @if($posts->hasPages())
+            <div class="d-flex justify-content-center">
+                {{ $posts->links() }}
+            </div>
+            @endif
         </main>
     </div>
 @endsection
